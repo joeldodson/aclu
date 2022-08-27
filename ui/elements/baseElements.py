@@ -44,6 +44,9 @@ class BaseElement:
         originalValue = self.attrs.get(attr)
         if value:
             self.attrs[attr] = value
+            # if attr did not exist already, need to return value it was just set to
+            # if originalValue is not None, attr already existed thus need to return originalValue  
+            originalValue = value if not originalValue else originalValue 
         return originalValue 
 
     def id(self, value:str = None) -> str:

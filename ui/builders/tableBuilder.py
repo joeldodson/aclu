@@ -83,8 +83,6 @@ class TableInfo:
     caption: Any 
     rowHeadingName: Any = 'Row Names' # the 0th column, i.e., the column of row headings  
     columnHeadings: Dict = field(default_factory=dict)  
-    # columnHeadings: List[Any] = field(default_factory = list)
-    # customColumnHeadings: List[Any] = field(default_factory = list)
     rows: List[RowInfo] = field(default_factory= list)
 
     #####
@@ -124,8 +122,8 @@ class TableInfo:
         columnNames = [self.rowHeadingName] + list(self.columnHeadings.values())
         """
         split this to multiple lines for readability 
-        first add the table head <th> element to the table.
-        a <th> is a list of rows though in this case it's a single row of the names of the columns
+        first add the table head <thead> element to the table.
+        a <thead> is a list of rows though in this case it's a single row of the names of the columns
         a TableRow is a list of anything derived from TableData <td> or TableHeader <th> elements 
         """
         table.addElement(

@@ -68,5 +68,4 @@ class Title(BaseElement):
         super().__init__(tag='title', contents=self.titleStr, **kwArgs)
 
 
-
 ## end of file 
